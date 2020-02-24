@@ -1,0 +1,339 @@
+/*
+File Name: style.less
+Date: 03/07/19
+Programmer: Chan Saechao
+*/
+
+/* VARIABLES */
+@base_color: #FFFFFF;
+@tablet_color: #FFFFFF;
+@desktop_color: #FFFFFF;
+
+/* colors */
+@m_bg_color: @base_color;
+@t_bg_color: @tablet_color;
+@d_bg_color: @desktop_color;
+@footer_color: #9F00C5;
+@references_hover_color: #E8E8E8;
+@references_bg_color: #0000FF;
+
+/* sizes */
+
+@m_font_size: 16px;
+@t_font_size: @m_font_size * .9375;
+@d_font_size: @m_font_size * .875;
+@h1_font_size: 2em;
+@h2_font_size: @h1_font_size * .7;
+@h3_font_size: @h1_font_size * .55;
+@summary_font_size: .6em;
+@summary_first_font_size: 1.5em;
+@designer_font_size: .75em;
+@contact_font_size: 0.9em;
+
+/* margins */
+
+@p_h_margin: 1em 1em 1em 0;
+@m_body_margin: 0 1em;
+@t_body_margin: 0 3em;
+@d_body_margin: 0 4em;
+@ol_li_left_margin: 0;
+
+@import "../css/mixins.less";
+
+/* SELECTORS */
+
+/* MOBILE STYLES */
+
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5em;
+    .commonProperties(@m_bg_color, @m_font_size, @m_body_margin);
+}
+
+p,
+h1,
+h2,
+h3 {
+    margin: @p_h_margin;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+h1 {
+    .size(@h1_font_size);
+    text-shadow: 2px 2px #989898;
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: 2em;
+}
+
+h2 {
+    .size(@h2_font_size);
+}
+
+h3 {
+    .size(@h3_font_size);
+    font-style: italic;
+}
+
+ol {
+    list-style: decimal;
+    margin-left: 25px;
+}
+
+li {
+    line-height: 1.5em;
+}
+
+ol li {
+    margin-left: @ol_li_left_margin;
+}
+
+footer {
+    margin-bottom: 10px;
+    font-style: italic;
+    .color(@footer_color);
+    text-align: center;
+}
+
+#references ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+#references a:link,
+#references a:visited {
+    text-decoration: none;
+}
+
+#references a:hover {
+    text-decoration: underline;
+    .color(@references_hover_color);
+    background-color: @references_bg_color;
+}
+
+#summary {
+    .size(@summary_font_size);
+    font-style: italic;
+    line-height: 115%;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+#summary:first-letter {
+    .size(@summary_first_font_size);
+    font-weight: bold;
+}
+
+#designer {
+    .size(@designer_font_size);
+    line-height: 1.1em;
+    text-align: left;
+}
+
+#contact {
+    letter-spacing: 3px;
+    .size(@contact_font_size);
+}
+
+/* Mobile Hamburger Menu */
+
+/* remove bullet in front of list items in menu */
+
+.header ul {
+    list-style-type: none;
+    margin-top: 0;
+    padding-left: 0;
+    overflow: hidden;
+}
+
+/* space between lines */
+
+.header li {
+    padding: 10px 0;
+}
+
+/* remove underline in links. */
+
+.header li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.header li a:hover {
+    background-color: #F4F4F4;
+}
+
+/* space around each of the menu items */
+
+.header li a {
+    padding: 10px 30px;
+}
+
+/* clear float on line below */
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height 1s ease-out;
+}
+
+/* menu icon for responsive hamburger menu */
+
+.header .menu-icon {
+    /* location of hamburger icon */
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.header .menu-icon .navicon {
+    /* center line of hamburger icon */
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+/* top and bottom lines of hamburger icon */
+.header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* respond to click on hamburger menu icon */
+
+.header .menu-btn {
+    /* hide checkbox */
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+/* animations */
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+/* TABLET STYLES */
+
+@media only screen and (min-width: 600px) {
+
+    body {
+        .commonProperties(@t_bg_color, @t_font_size, @t_body_margin);
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: .8em;
+    }
+
+    h3 {
+        margin-top: 0;
+    }
+
+    ol {
+        margin-bottom: 15px;
+    }
+
+    ul {
+        margin-bottom: 1em;
+    }
+
+    #funfacts ol {
+        margin-left: 18px;
+    }
+
+    /* hamburger menu tablet-desktop */
+    .header .menu {
+        float: left;
+        margin: 0 0 10px 0;
+        max-height: none;
+    }
+
+    .header ul {
+        overflow: visible;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .header li {
+        float: left;
+        width: 20%;
+    }
+
+    .header li a {
+        //padding: 10px 10px;
+        width: 100%;
+        padding-left: 40%;
+        padding-right: 40%;
+    }
+
+    #intro {
+        clear: left;
+    }
+
+    /* hide the checkbox and label for it */
+
+    .header .menu-icon,
+    .menu-btn {
+        display: none;
+    }
+
+}
+
+/* DESKTOP STYLES */
+
+@media only screen and (min-width: 1025px) {
+
+    body {
+        .commonProperties(@d_bg_color, @d_font_size, @d_body_margin);
+    }
+
+    /* padding for menu */
+    .header li {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+}
