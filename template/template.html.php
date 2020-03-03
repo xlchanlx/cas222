@@ -9,7 +9,7 @@
     <base target="_blank"> <!-- open all links not marked "_self" in a new tab -->
     <title>Ace in the Hole Multisport Events</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
-    <link href="css/style.less" rel="stylesheet/less" type="text/css">
+    <link href="../css/style.less" rel="stylesheet/less" type="text/css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
 </head>
 
@@ -22,11 +22,11 @@
         <h1 id="logo">Ace in the Hole Multisport Events</h1>
 
         <ul class="menu">
-            <li><a href="http://chansaechao.webhostingforstudents.com/cas222/" target="_self">Home</a></li>
-            <li><a href="http://chansaechao.webhostingforstudents.com/cas222" target="_self">Event</a></li>
-            <li><a href="http://chansaechao.webhostingforstudents.com/cas222" target="_self">Gallery</a></li>
-            <li><a href="http://chansaechao.webhostingforstudents.com/cas222/registration/registrations.html.php" target="_self">Registration</a></li>
-            <li><a href="http://chansaechao.webhostingforstudents.com/cas222/contact/contact.html.php" target="_self">Contact</a></li>
+            <li><a href="../cas222/template/template.html.php" target="_self">Home</a></li>
+            <li><a href="../cas222/template/template.html.php" target="_self">Event</a></li>
+            <li><a href="../cas222/template/template.html.php" target="_self">Gallery</a></li>
+            <li><a href="../cas222/registration/registrations.html.php" target="_self">Registration</a></li>
+            <li><a href="../cas222/contact/contact.html.php" target="_self">Contact</a></li>
         </ul>
 
     </header>

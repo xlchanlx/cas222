@@ -8,7 +8,7 @@ try
 catch (PDOException $e)
 {
     $error = 'Unable to connect to the database server.';
-    include 'includes/error.html.php';
+    include 'error.html.php';
     exit();
 }
 

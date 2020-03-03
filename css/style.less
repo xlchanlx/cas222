@@ -71,7 +71,7 @@ h3 {
     font-weight: bold;
 }
 
-h1 {
+header h1 {
     .size(@h1_font_size);
     text-shadow: 2px 2px #989898;
     margin-bottom: 0;
@@ -81,6 +81,15 @@ h1 {
     color: red;
     text-shadow: none;
 }
+
+h1 {
+    .size(@h1_font_size);
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: 2em;
+    text-shadow: none;
+}
+
 
 header {
     background: black;
@@ -120,6 +129,16 @@ footer {
     .color(@footer_color);
     text-align: center;
     background: black;
+}
+
+/* change footer text color */
+.footernav a {
+    color: red;
+    padding: 0 5px;
+}
+
+.footernav a:hover {
+    color: white;
 }
 
 #references ul {
@@ -188,6 +207,7 @@ footer {
 
 .header li a:hover {
     background-color: #B5B5B5;
+    color: red;
 }
 
 /* space around each of the menu items */
@@ -276,6 +296,68 @@ footer {
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
     top: 0;
 }
+
+#wrapper {
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    /*width: 80%;*/
+}
+
+.main {
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 1px;
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 83%;
+}
+
+/* for forms */
+form {
+    background-color: #ffffff;
+    font-family: Cinzel, Arial, serif;
+    padding: 10px;
+    padding-top: 35px;
+}
+
+input,
+textarea {
+    display: block;
+    margin-bottom: 2em;
+}
+
+label {
+    clear: left;
+    float: left;
+    font-size: .75em;
+    margin-bottom: 1em;
+    padding-right: 10px;
+    text-align: right;
+    width: 150px;
+}
+
+label,
+select {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#registration {
+    vertical-align: middle;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#registration,
+select {
+    line-height: 10px;
+    max-width: 100%;
+    display: inline-block;
+}
+
 
 /* TABLET STYLES */
 
