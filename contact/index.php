@@ -25,7 +25,7 @@ if (isset($_POST['myName'])) {
     //Set this to true if SMTP host requires authentication to send email
     $mail->SMTPAuth = true;
     //Provide username and password
-    $mail->Username = "phpmailer@chansaechao.webhostingforstudents.com";
+    $mail->Username = "ace_multisport_event@chansaechao.webhostingforstudents.com";
     $mail->Password = "MyPassword09!";
 
     //Use a fixed address in your own domain as the from address
@@ -38,16 +38,17 @@ if (isset($_POST['myName'])) {
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
     $mail->addReplyTo($myEmail, $myName);
-        $mail->Subject = 'PHPMailer contact form';
+        $mail->Subject = 'Ace In The Hole';
         //Keep it simple - don't use HTML
         $mail->isHTML(true);
         //Build a simple message body
-    $mail->Body = <<<EOT
-Email: $myEmail<br>
-Name: $myName<br>
-Athlete Volunteer: $party<br>
-Question: $myQuestion
+        $mail->Body = <<<EOT
+Email: {$_POST['myEmail']}
+Party: {$_POST['party']}
+Name: {$_POST['myName']}
+Message: {$_POST['myQuestion']}
 EOT;
+
         //Send the message, check for errors
         if (!$mail->send()) {
             //The reason for failing to send will be in $mail->ErrorInfo
@@ -56,7 +57,9 @@ EOT;
         } else {
             include 'success.html.php';
         }
-         } else {
-    include 'contact.html.php';
-}
+    } else {
+        include 'contact.html.php';
+    }
+
+?>
 

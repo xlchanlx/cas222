@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
@@ -12,8 +11,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
 </head>
 
-<body>
-
 <header class="header">
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
@@ -21,41 +18,42 @@
     <h1 id="logo">Ace in the Hole Multisport Events</h1>
 
     <ul class="menu">
-        <li><a href="http://chansaechao.webhostingforstudents.com/cas222/" target="_self">Home</a></li>
-        <li><a href="http://chansaechao.webhostingforstudents.com/cas222" target="_self">Event</a></li>
-        <li><a href="http://chansaechao.webhostingforstudents.com/cas222" target="_self">Gallery</a></li>
-        <li><a href="http://chansaechao.webhostingforstudents.com/cas222/registration/registrations.html.php" target="_self">Registration</a></li>
-        <li><a href="http://chansaechao.webhostingforstudents.com/cas222/contact/contact.html.php" target="_self">Contact</a></li>
+        <li><a href="/cas222/home/index.php" target="_self">Home</a></li>
+        <li><a href="/cas222/event/index.php" target="_self">Event</a></li>
+        <li><a href="/cas222/gallery/index.php" target="_self">Gallery</a></li>
+        <li><a href="/cas222/registration/index.php" target="_self">Registration</a></li>
+        <li><a href="/cas222/contact/index.php" target="_self">Contact</a></li>
     </ul>
 
 </header>
 
-    <div id="wrapper">
-        <main>
-            <h1>Questions? We'd love to hear from you!</h1>
-            <form method="post" action=" " id="inquiryForm">
-                <label for="party">Athlete or Volunteer:</label>
-                <select id="party" name="party" form="inquiryForm">
-                    <option value="athlete">Athlete</option>
-                    <option value="volunteer">Volunteer</option>
-                    <option value="interestedParty">Interested Party</option>
-                </select>
+<body>
+  <div id="wrapper">
+    <main class="main"><br><br>
+      <h1>Questions? We'd love to hear from you!</h1>
+      <form method="post" action="index.php" id="inquiryForm">
+          <div>
+              <label for="party">Choose a party:</label>
+              <select id="party" name="party" form="inquiryForm" >
+                  <option selected="selected">Select Your Party</option>
+                  <option value="athlete">Athlete</option>
+                  <option value="volunteer">Volunteer</option>
+                  <option value="interested party">Interested Party</option>
+              </select>
+          </div><br>
+          <div>
+              <label for="myName">Name:</label>
+              <input type="text" name="myName" id="myName">
+              <label for="myEmail">E-mail:</label>
+              <input type="text" name="myEmail" id="myEmail">
+              <label for="myQuestion">Question:</label>
+              <textarea form="inquiryForm" rows="10" cols="45" name="myQuestion" id="myQuestion"></textarea>
+              <input id="mySubmit" type="submit" value="Submit">
+          </div>
+      </form>
+    </main>
 
-                <label for="myName">Name:</label>
-                <input type="text" name="myName" id="myName">
-
-                <label for="myEmail">E-mail:</label>
-                <input type="text" name="myEmail" id="myEmail">
-
-                <label for="myQuestion">Question:</label>
-                <textarea form="inquiryForm" rows="10" cols="50" name="myQuestion" id="myQuestion"></textarea>
-
-                <input id="mySubmit" type="submit" value="Submit">
-            </form>
-        </main>
-
-    </div>
-<?php include('../includes/footer.inc.html.php'); ?>
+  </div><br><br><br><br><br><br><br>
+  <?php include "../includes/footer.inc.html.php"; ?>
 </body>
-
 </html>

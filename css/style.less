@@ -54,8 +54,13 @@ body {
 }
 
 .main {
-    margin-left: 20px;
-    margith-right: 20px;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 1px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 p,
@@ -139,6 +144,7 @@ footer {
 
 .footernav a:hover {
     color: white;
+    bottom: 0;
 }
 
 #references ul {
@@ -301,18 +307,7 @@ footer {
     background-color: #ffffff;
     margin-left: auto;
     margin-right: auto;
-    /*width: 80%;*/
-}
-
-.main {
-    background-color: #ffffff;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    padding-bottom: 1px;
-    padding-left: 60px;
-    padding-right: 60px;
-    width: 83%;
+    width: 100%;
 }
 
 /* for forms */
@@ -336,7 +331,7 @@ label {
     margin-bottom: 1em;
     padding-right: 10px;
     text-align: right;
-    width: 150px;
+    width: 50px;
 }
 
 label,
@@ -357,6 +352,36 @@ select {
     max-width: 100%;
     display: inline-block;
 }
+
+/* responsive */
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/* images */
+    .column {
+  flex: 25%;
+  max-width: 22%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+    .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+    .column {
+        flex: 50%;
+        max-width: 20%;
+    }
+
 
 
 /* TABLET STYLES */
@@ -424,8 +449,18 @@ select {
     .menu-btn {
         display: none;
     }
+    
+    /* images */
+    .column {
+        flex: 50%;
+        max-width: 20%;
+    }
+    #wrapper {
 
+    width: 50%;
 }
+}
+
 
 /* DESKTOP STYLES */
 
@@ -440,5 +475,30 @@ select {
         padding-left: 0px;
         padding-right: 0px;
     }
+    
+    /* images */
+    .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 22%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+    .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
 
 }
